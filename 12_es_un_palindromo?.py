@@ -8,22 +8,26 @@
 """
 
 
-def diferencia_cadenas(str1,str2):
-    out1 = ""
-    out2 = ""
-    for char in str1:
-        if char not in str2:
-            out1 += char
+import unidecode
 
-    for char in str2:
-        if char not in str1:
-            out2 += char
-    print(f"out1: '{out1}'")
-    print(f"out2: '{out2}'")
+def es_palindromo(texto):
+    texto = texto.lower()
 
+    texto = unidecode.unidecode(texto)
+
+    caracteres_validos = "abcdefghijklmnopqrstuvwxyz0123456789"
+    texto_limpio = ""
+    for char in texto:
+        if char in caracteres_validos:
+            texto_limpio += char
+
+    return texto_limpio == texto_limpio[::-1]
 
 if __name__ == '__main__':
-    cadena1 = "hola"
-    cadena2 = "mundo"
-    diferencia_cadenas(cadena1, cadena2)
+    ejemplo_1 = "Ana lleva al oso la avellana."
+    ejemplo_2 = "Este no es un palíndromo."
+
+    print(f"'{ejemplo_1}' es palíndromo: {es_palindromo(ejemplo_1)}")
+    print(f"'{ejemplo_2}' es palíndromo: {es_palindromo(ejemplo_2)}")
+
 
