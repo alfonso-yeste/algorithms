@@ -1,19 +1,33 @@
 """""
- * Escribe una función que calcule y retorne el factorial de un número dado
- * de forma recursiva.
+/*
+ * Crea una función que calcule y retorne cuántos días hay entre dos cadenas
+ * de texto que representen fechas.
+ * - Una cadena de texto que representa una fecha tiene el formato "dd/MM/yyyy".
+ * - La función recibirá dos String y retornará un Int.
+ * - La diferencia en días será absoluta (no importa el orden de las fechas).
+ * - Si una de las dos cadenas de texto no representa una fecha correcta se
+ *   lanzará una excepción.
+ */
 """
 
+from datetime import datetime
 
-def es_numero_armstrong(num):
-    digitos = str(num)
-    n = len(digitos)
-    suma = sum(int(d) ** n for d in digitos)
-    return suma == num
+def dias_entre_fechas(fecha1, fecha2):
+    try:
+        formato = "%d/%m/%Y"
+        fecha1_obj = datetime.strptime(fecha1, formato)
+        fecha2_obj = datetime.strptime(fecha2, formato)
 
-# Ejemplo de uso
+        diferencia = abs((fecha2_obj - fecha1_obj).days)
+        return diferencia
+
 if __name__ == '__main__':
-    numero_armstrong = 153
-    print(f"¿El número {numero_armstrong} es un número de Armstrong?: {es_numero_armstrong(numero_armstrong)}")
+    fecha1 = "10/11/2024"
+    fecha2 = "04/11/2024"
+    try:
+        dias_diferencia = dias_entre_fechas(fecha1, fecha2)
+        print(f"La diferencia en días entre {fecha1} y {fecha2} es: {dias_diferencia} días.")
+
 
 
 
