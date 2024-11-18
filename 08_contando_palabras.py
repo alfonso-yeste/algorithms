@@ -9,7 +9,7 @@
 """
 
 def contar_palabras(texto):
-    signos_puntuacion = ".,;:!?()\"'"
+    signos_puntuacion = ".,;:!?¿´`()\"'"
 
     texto = texto.lower()
 

@@ -23,3 +23,4 @@ if __name__ == '__main__':
     print(son_anagramas("amor", "amro"))
     print(son_anagramas("amor", "amor"))
     print(son_anagramas("amor", "rama"))
+
