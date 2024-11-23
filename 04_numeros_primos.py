@@ -1,9 +1,7 @@
 """""
- * Escribe un programa que imprima los 50 primeros números de la sucesión
- * de Fibonacci empezando en 0.
- * - La serie Fibonacci se compone por una sucesión de números en
- *   la que el siguiente siempre es la suma de los dos anteriores.
- *   0, 1, 1, 2, 3, 5, 8, 13...
+/*
+ * Escribe un programa que se encargue de comprobar si un número es o no primo.
+ * Hecho esto, imprime los números primos entre 1 y 100.
  */
 """
 
@@ -27,3 +25,8 @@ def imprimir_primos_hasta_100():
 if __name__ == '__main__':
     imprimir_primos_hasta_100()
 
+
+
+def primo(n):
+    if n <= 1:
+        return false

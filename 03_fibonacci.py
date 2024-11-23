@@ -17,3 +17,5 @@ def fibonacci(n):
 # Ejecutar la función para los primeros 50 números de Fibonacci
 if __name__ == '__main__':
     fibonacci(50)
+
+
